@@ -67,10 +67,16 @@ class _MyAppState extends State<MyApp> {
                   GButton(
                     icon: Icons.home,
                     text: 'Home',
+                    backgroundColor: Colors.deepPurple[100],
+                    iconActiveColor: Colors.deepPurple[800],
+                    textColor: Colors.deepPurple[800],
                   ),
                   GButton(
                     icon: Icons.message,
                     text: 'Inbox',
+                    backgroundColor: Colors.blue[100],
+                    iconActiveColor: Colors.blue[800],
+                    textColor: Colors.blue[800],
                   ),
                   GButton(
                     active: true,
@@ -80,10 +86,16 @@ class _MyAppState extends State<MyApp> {
                   GButton(
                     icon: Icons.favorite,
                     text: 'Saved',
+                    backgroundColor: Colors.pink[100],
+                    iconActiveColor: Colors.pink[800],
+                    textColor: Colors.pink[800],
                   ),
                   GButton(
                     icon: Icons.person,
                     text: 'Profile',
+                    backgroundColor: Colors.teal[100],
+                    iconActiveColor: Colors.teal[800],
+                    textColor: Colors.teal[800],
                   ),
                 ],
                 selectedIndex: _selectedIndex,
