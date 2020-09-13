@@ -50,9 +50,13 @@ class _MyAppState extends State<MyApp> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: Colors.white, boxShadow: [
-          BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.25))
-        ]),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(                                           
+            topRight: Radius.circular(30), 
+            topLeft: Radius.circular(30)),
+          color: Colors.white, 
+          boxShadow: [BoxShadow(blurRadius: 20, color: Colors.grey[350])]
+        ),
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
