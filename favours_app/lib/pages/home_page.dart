@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+
 import 'package:favours_app/services/search_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,7 +10,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<dynamic> searchResults = [];
-
   searchDjango(value) async {
     SearchService.searchDjangoApi(value).then((responseBody) {
       List<dynamic> data = jsonDecode(responseBody);
@@ -28,10 +28,6 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Home Page + search"),
-          centerTitle: true,
-        ),
         body: ListView(
           children: <Widget>[
             Padding(

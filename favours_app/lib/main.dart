@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-void main() => runApp(MaterialApp(
+import 'package:favours_app/pages/home_page.dart';
+import 'package:favours_app/pages/inbox_page.dart';
+import 'package:favours_app/pages/post_page.dart';
+import 'package:favours_app/pages/saved_page.dart';
+import 'package:favours_app/pages/profile_page.dart';
+
+void main() => runApp(
+  MaterialApp(
     title: "GNav",
     theme: ThemeData(
       primaryColor: Colors.black,
     ),
-    home: MyApp()));
+    home: MyApp()
+  )
+);
 
 class MyApp extends StatefulWidget {
   @override
@@ -14,31 +23,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Your inbox',
-      style: optionStyle,
-    ),
-    Text(
-      'Post a new favour!',
-      style: optionStyle,
-    ),
-    Text(
-      'Saved favours',
-      style: optionStyle,
-    ),
-    Text(
-      'Welcome, Brian',
-      style: optionStyle,
-    ),
+  int _selectedPage  = 0;
+  final _pageOptions = [
+    HomePage(), 
+    PostPage(), 
+    SavedPage(),
+    ProfilePage(),
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Favours app'),
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _pageOptions.elementAt(_selectedPage),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -55,14 +47,14 @@ class _MyAppState extends State<MyApp> {
             topRight: Radius.circular(30), 
             topLeft: Radius.circular(30)),
           color: Colors.white, 
-          boxShadow: [BoxShadow(blurRadius: 20, color: Colors.grey[350])]
+          boxShadow: [BoxShadow(blurRadius: 20, color: Colors.grey[300])]
         ),
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
                 gap: 8,
-                activeColor: Colors.white,
+                color: Colors.grey,
                 iconSize: 24,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 duration: Duration(milliseconds: 800),
@@ -75,17 +67,19 @@ class _MyAppState extends State<MyApp> {
                     iconActiveColor: Colors.deepPurple[800],
                     textColor: Colors.deepPurple[800],
                   ),
+                  // GButton(
+                  //   icon: Icons.message,
+                  //   text: 'Inbox',
+                  //   backgroundColor: Colors.blue[100],
+                  //   iconActiveColor: Colors.blue[800],
+                  //   textColor: Colors.blue[800],
+                  // ),
                   GButton(
-                    icon: Icons.message,
-                    text: 'Inbox',
-                    backgroundColor: Colors.blue[100],
-                    iconActiveColor: Colors.blue[800],
-                    textColor: Colors.blue[800],
-                  ),
-                  GButton(
-                    active: true,
                     icon: Icons.add,
                     text: 'New',
+                    backgroundColor: Colors.blueGrey[100],
+                    iconActiveColor: Colors.blueGrey[800],
+                    textColor: Colors.blueGrey[800],
                   ),
                   GButton(
                     icon: Icons.favorite,
@@ -102,10 +96,10 @@ class _MyAppState extends State<MyApp> {
                     textColor: Colors.teal[800],
                   ),
                 ],
-                selectedIndex: _selectedIndex,
+                selectedIndex: _selectedPage,
                 onTabChange: (index) {
                   setState(() {
-                    _selectedIndex = index;
+                    _selectedPage = index;
                   });
                 }),
           ),
