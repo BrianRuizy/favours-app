@@ -28,10 +28,11 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
+        body: 
+        ListView(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child:TextField(
                 onChanged: (val) {
                   searchResults.clear(); //clearing cached results
@@ -49,9 +50,46 @@ class _HomePageState extends State<HomePage> {
                   )
                 ),
               )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20.0),
+              height: 150.0,
+              child: 
+              ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Container(
+                    width: 160.0,
+                    color: Colors.grey[300],
+                    margin: const EdgeInsets.only(left: 10)
+                  ),
+                  Container(
+                    width: 160.0,
+                    color: Colors.grey[200],
+                    margin: const EdgeInsets.only(left: 15)
+                  ),
+                  Container(
+                    width: 160.0,
+                    color: Colors.grey[300],
+                    margin: const EdgeInsets.only(left: 15)
+                  ),
+                  Container(
+                    width: 160.0,
+                    color: Colors.grey[200],
+                    margin: const EdgeInsets.only(left: 15)
+
+                  ),
+                  Container(
+                    width: 160.0,
+                    color: Colors.grey[300],
+                    margin: const EdgeInsets.only(left: 15)
+
+                  ),
+                ],
+              ),
             )
           ],
-        )
+        ),
       ),
     );
   }

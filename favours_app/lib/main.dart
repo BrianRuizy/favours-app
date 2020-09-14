@@ -45,7 +45,8 @@ class _MyAppState extends State<MyApp> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(                                           
             topRight: Radius.circular(30), 
-            topLeft: Radius.circular(30)),
+            topLeft: Radius.circular(30)
+          ),
           color: Colors.white, 
           boxShadow: [BoxShadow(blurRadius: 20, color: Colors.grey[300])]
         ),
