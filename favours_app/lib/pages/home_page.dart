@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ListView(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child:TextField(
                 onChanged: (val) {
                   searchResults.clear(); //clearing cached results
@@ -41,8 +41,9 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 25.0),
                   hintText: 'Search here', 
+
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
                   suffixIcon: IconButton(
                     icon: Icon(Icons.search),
@@ -54,14 +55,13 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: EdgeInsets.symmetric(vertical: 20.0),
               height: 150.0,
-              child: 
-              ListView(
+              child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Container(
                     width: 160.0,
                     color: Colors.grey[300],
-                    margin: const EdgeInsets.only(left: 10)
+                    margin: const EdgeInsets.only(left: 20)
                   ),
                   Container(
                     width: 160.0,
@@ -76,14 +76,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     width: 160.0,
                     color: Colors.grey[200],
-                    margin: const EdgeInsets.only(left: 15)
-
-                  ),
-                  Container(
-                    width: 160.0,
-                    color: Colors.grey[300],
-                    margin: const EdgeInsets.only(left: 15)
-
+                    margin: const EdgeInsets.only(left: 15), 
                   ),
                 ],
               ),

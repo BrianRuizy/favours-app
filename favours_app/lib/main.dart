@@ -55,11 +55,10 @@ class _MyAppState extends State<MyApp> {
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
                 gap: 8,
-                color: Colors.grey,
+                color: Colors.grey[400],
                 iconSize: 24,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 duration: Duration(milliseconds: 800),
-                tabBackgroundColor: Colors.grey[800],
                 tabs: [
                   GButton(
                     icon: Icons.home,
@@ -68,19 +67,12 @@ class _MyAppState extends State<MyApp> {
                     iconActiveColor: Colors.deepPurple[800],
                     textColor: Colors.deepPurple[800],
                   ),
-                  // GButton(
-                  //   icon: Icons.message,
-                  //   text: 'Inbox',
-                  //   backgroundColor: Colors.blue[100],
-                  //   iconActiveColor: Colors.blue[800],
-                  //   textColor: Colors.blue[800],
-                  // ),
                   GButton(
                     icon: Icons.add,
                     text: 'New',
-                    backgroundColor: Colors.blueGrey[100],
-                    iconActiveColor: Colors.blueGrey[800],
-                    textColor: Colors.blueGrey[800],
+                    backgroundColor: Colors.teal[100],
+                    iconActiveColor: Colors.teal[800],
+                    textColor: Colors.teal[800],
                   ),
                   GButton(
                     icon: Icons.favorite,
@@ -92,9 +84,9 @@ class _MyAppState extends State<MyApp> {
                   GButton(
                     icon: Icons.person,
                     text: 'Profile',
-                    backgroundColor: Colors.teal[100],
-                    iconActiveColor: Colors.teal[800],
-                    textColor: Colors.teal[800],
+                    backgroundColor: Color.fromRGBO(157, 170, 196, 1),
+                    iconActiveColor: Colors.white,
+                    textColor: Colors.white
                   ),
                 ],
                 selectedIndex: _selectedPage,
